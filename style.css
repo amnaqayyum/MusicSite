@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #020659;
+}
+
+h1 {
+    font-size: 1.25em;
+}
+
+h2,
+h3 {
+    font-size: 1em;
+}
+
+p,
+dl,
+dd {
+    font-size: 1em;
+}
+
+h2 {
+    color: #590242;
+    padding: 30px 25px 10px;
+    text-transform: uppercase;
+}
+
+.container {
+    margin: auto;
+    max-width: 834px;
+    background: white;
+}
+
+.header {
+    color: white;
+    background: #020873;
+}
+
+.header:hover {
+    background: #590242;
+}
+
+.header input {
+    display: none;
+}
+
+.header label {
+    display: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: absolute;
+    user-select: none;
+}
+
+.header label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+.header label span:before,
+.header label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header label span:before {
+    top: 5px;
+}
+
+.header label span:after {
+    top: -5px;
+}
+
+.header input:checked~label span {
+    background: transparent;
+}
+
+.header input:checked~label span:before {
+    transform: rotate(-45deg);
+}
+
+.header input:checked~label span:after {
+    transform: rotate(45deg);
+}
+
+.header input:checked~label:not(.steps) span:before,
+.header input:checked~label:not(.steps) span:after {
+    top: 0;
+}
+
+.header .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .menu li {
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.header .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.header .menu li.logo {
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 20px;
+}
+
+.header .menu li:not(:first-child) {
+    display: none;
+}
+
+.header input:checked~nav li:not(:first-child) {
+    display: block;
+}
+
+.scroll {
+    display: flex;
+    overflow-x: auto;
+}
+
+.scroll .trending-card {
+    margin-left: 10px;
+    position: relative;
+
+}
+
+.scroll .trending-card .card {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: #590242;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.scroll .trending-card .card h3 {
+    text-transform: uppercase;
+}
+
+dl {
+    display: flex;
+}
+
+dt {
+    font-style: italic;
+    padding-right: 10px;
+}
+
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
+.more-btn {
+    display: flex;
+    padding: 10px;
+}
+
+.more-btn button {
+    background-color: #590242;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.more-btn button:hover {
+    background: #020659;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button {
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255, 255, 255, .5)
+}
+
+#playlists-for-you {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-playlist {
+    width: 100%;
+}
+
+.my-playlist .scroll {
+    background-color: #0D8DFB;
+    padding: 16px;
+    color: white;
+}
+
+#curated-playlists .scroll {
+    background: #030A8C;
+}
+
+.my-playlist .playlist-card {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    background: #2699FB;
+    padding: 12px;
+    text-align: center;
+    flex-direction: column;
+}
+
+#curated-playlists .playlist-card {
+    background: #020873;
+}
+
+.my-playlist .playlist-card h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.my-playlist .playlist-card+.playlist-card {
+    margin-left: 14px;
+}
+
+.music-banner {
+    background: rgb(33, 4, 217);
+    background: linear-gradient(100deg, rgba(58, 28, 248, 1) 0%, rgba(0, 58, 140, 1) 34%, rgba(2, 6, 89, 1) 72%, rgba(15, 234, 255, 1) 020659%);
+    color: #ffffff;
+    padding: 10px 25px 15px;
+}
+
+.music-banner h1 {
+    margin-bottom: 10px;
+}
+
+#trending .scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+
+#trending .scroll::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+
+#trending .scroll::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+
+#trending .scroll::-webkit-scrollbar {
+    border: 1px solid #d5d5d5;
+}
+
+.my-playlist .scroll::-webkit-scrollbar {
+    width: 15px;
+}
+
+.my-playlist .scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #020659;
+}
+
+.my-playlist .scroll::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+
+.my-playlist .scroll::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.footer {
+    padding: 30px 0 15px;
+    text-align: center;
+    font-size: .75em;
+    color: #590242;
+}
+
+
+
+@media screen and (min-width:834px) {
+    .header label {
+        display: none;
+    }
+
+    .header .menu .logo {
+        text-align: start;
+    }
+
+    .header .menu li:not(:first-child) {
+        display: block;
+    }
+
+    .header .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .header .menu li {
+        width: 20%;
+        text-align: center;
+    }
+
+    #playlists-for-you {
+        flex-wrap: nowrap;
+    }
+
+    .my-playlist {
+        width: 50%;
+    }
+
+    .my-playlist .scroll {
+        flex-direction: column;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .my-playlist .playlist-card {
+        flex-direction: row;
+    }
+
+    .my-playlist .playlist-card+.playlist-card {
+        margin-top: 14px;
+    }
+
+    .more-btn {
+        justify-content: end;
+    }
+
+}
